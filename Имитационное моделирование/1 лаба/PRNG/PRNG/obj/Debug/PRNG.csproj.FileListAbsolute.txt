@@ -1,0 +1,12 @@
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\bin\Debug\PRNG.exe.config
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\obj\Debug\PRNG.csprojResolveAssemblyReference.cache
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\obj\Debug\PRNG.Form1.resources
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\obj\Debug\PRNG.Properties.Resources.resources
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\obj\Debug\PRNG.csproj.GenerateResource.Cache
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\bin\Debug\PRNG.exe
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\bin\Debug\PRNG.pdb
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\obj\Debug\PRNG.exe
+C:\Users\Buzzz\Desktop\Учеба\3 семак\тервер\C#Форма\PRNG\PRNG\obj\Debug\PRNG.pdb
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Имитационное моделирование\1 лаба\PRNG\PRNG\bin\Debug\PRNG.exe.config
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Имитационное моделирование\1 лаба\PRNG\PRNG\obj\Debug\PRNG.exe
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Имитационное моделирование\1 лаба\PRNG\PRNG\obj\Debug\PRNG.pdb

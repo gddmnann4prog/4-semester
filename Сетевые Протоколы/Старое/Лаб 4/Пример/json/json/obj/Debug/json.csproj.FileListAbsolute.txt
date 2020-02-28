@@ -1,0 +1,11 @@
+C:\TEMP\json\json\bin\Debug\json.exe.config
+C:\TEMP\json\json\bin\Debug\json.exe
+C:\TEMP\json\json\bin\Debug\json.pdb
+C:\TEMP\json\json\obj\Debug\json.exe
+C:\TEMP\json\json\obj\Debug\json.pdb
+\\172.16.4.6\student\docum\Сетевые протоколы\ЛР 6 json + cgi\Пример\json\json\bin\Debug\json.exe.config
+\\172.16.4.6\student\docum\Сетевые протоколы\ЛР 6 json + cgi\Пример\json\json\obj\Debug\json.exe
+\\172.16.4.6\student\docum\Сетевые протоколы\ЛР 6 json + cgi\Пример\json\json\obj\Debug\json.pdb
+\\172.16.4.6\student\docum\Сетевые протоколы\ЛР 6 json + cgi\Пример\json\json\bin\Debug\json.exe
+\\172.16.4.6\student\docum\Сетевые протоколы\ЛР 6 json + cgi\Пример\json\json\bin\Debug\json.pdb
+\\172.16.4.6\student\docum\Сетевые протоколы\ЛР 6 json + cgi\Пример\json\json\obj\Debug\json.csprojResolveAssemblyReference.cache
