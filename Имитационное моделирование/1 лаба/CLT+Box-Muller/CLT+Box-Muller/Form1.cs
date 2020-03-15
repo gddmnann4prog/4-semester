@@ -44,7 +44,7 @@ namespace CLT_Box_Muller
         {
             double result = 0;
 
-            for (int i = 1; i < power; i++ )
+            for (int i = 1; i <= power; i++)
             {
                 if (i == 1) result = 1;
 
@@ -59,7 +59,6 @@ namespace CLT_Box_Muller
             double result = 0;
 
             result = value - Power(value, 3) / 6.0 + Power(value, 5) / 40.0;
-//            result = (Math.Exp(-value*value/2.0))/(Math.Sqrt(2*Math.PI));
 
             return result;
         }
@@ -139,17 +138,13 @@ namespace CLT_Box_Muller
         double[] CLTExpression(double[] selection, int N)
         {
             int amount = 5;
-            double PartSum = 0;
+            double PartSum;
             double[] result = new double[N];
             Random rnd = new Random();
             randValue = (uint)rnd.Next();
 
             for (int i = 0; i < N; i++)
             {
-                /*
-                result[i] = PartialSum(selection, i + 1) - ((i + 1) * expect);
-                result[i] /= Math.Sqrt((i + 1) * disp);
-                */
                 PartSum = 0;
                 for(int j = 0; j < amount; j++)
                 {
@@ -176,7 +171,7 @@ namespace CLT_Box_Muller
 
             return result;
         }
-
+        
         private void RenderGist(
             System.Windows.Forms.DataVisualization.Charting.Chart chart,
             TextBox pirsonBox,
@@ -186,7 +181,7 @@ namespace CLT_Box_Muller
             )
         {
             int gistIntervals = (int)this.numericUpDown2.Value;
-            int currentIndex = 0;
+            int currentIndex;
             double pirsonValue;
             double[] gistValues = new double[gistIntervals];
             double[] gistAmount = new double[gistIntervals];
@@ -219,27 +214,33 @@ namespace CLT_Box_Muller
             pirsonBox.Text = pirsonValue.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private double[] GenerateSelection(int N)
         {
+            double[] selection = new double[N];
             Random rnd = new Random();
             randValue = (uint)rnd.Next();
-
-            int N = (int)this.numericUpDown1.Value;
-            double[] selection = new double[N];
-            double[] selectionCLT = new double[N];
-            double[] selectionBM = new double[N];
 
             for (int i = 0; i < N; i++)
             {
                 selection[i] = PRNG();
-//                selection[i] = rnd.NextDouble();
             }
+
+            return selection;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int N = (int)this.numericUpDown1.Value;
+            double[] selection;
+            double[] selectionCLT;
+            double[] selectionBM;
+
+            selection = GenerateSelection(N);
 
             selectionCLT = CLTExpression(selection, N);
             selectionBM = BoxMullerExpression(selection, N);
 
             RenderGist(this.chart1, this.textBox1, "ЦПТ", selectionCLT, N);
-//            RenderGist(this.chart1, this.textBox1, "ЦПТ", selection, N);
             RenderGist(this.chart2, this.textBox2, "Бокс-Маллер", selectionBM, N);
         }
     }
