@@ -1,0 +1,9 @@
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\bin\Debug\Interpolation.exe.config
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\bin\Debug\Interpolation.exe
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\bin\Debug\Interpolation.pdb
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\obj\Debug\Interpolation.csprojAssemblyReference.cache
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\obj\Debug\Interpolation.Properties.Resources.resources
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\obj\Debug\Interpolation.csproj.GenerateResource.cache
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\obj\Debug\Interpolation.exe
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\obj\Debug\Interpolation.pdb
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 3\Interpolation\Interpolation\obj\Debug\Interpolation.Form1.resources
