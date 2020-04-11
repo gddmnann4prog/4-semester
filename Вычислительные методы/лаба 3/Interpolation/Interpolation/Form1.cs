@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Interpolation
 {
@@ -17,6 +18,11 @@ namespace Interpolation
         public Form1()
         {
             InitializeComponent();
+            chart1.Series.Add("Теоретический");
+            chart2.Series.Add("Теоретический");
+            chart3.Series.Add("Теоретический");
+            chart4.Series.Add("Теоретический");
+            chart5.Series.Add("Теоретический");
         }
 
         void GetFunctionValues()
@@ -40,6 +46,11 @@ namespace Interpolation
             chart3.Series[0].Points.Clear();
             chart4.Series[0].Points.Clear();
             chart5.Series[0].Points.Clear();
+            chart1.Series[1].Points.Clear();
+            chart2.Series[1].Points.Clear();
+            chart3.Series[1].Points.Clear();
+            chart4.Series[1].Points.Clear();
+            chart5.Series[1].Points.Clear();
         }
 
         public float[] LagrangeCoeffs()
@@ -130,7 +141,7 @@ namespace Interpolation
 
             for (int j = startIndex; j < degree + 1; j++)
             {
-                if (a[startIndex][maxIndex] > a[startIndex][j]) maxIndex = j;
+                if (a[startIndex][maxIndex] < a[startIndex][j]) maxIndex = j;
             }
 
             return maxIndex;
@@ -264,24 +275,54 @@ namespace Interpolation
             return result;
         }
 
-        void RenderPlot(float[] lagrCoeff, 
+        float[] GetUserCoeffs()
+        {
+            float[] coeffs = new float[5];
+
+            coeffs[0] = float.Parse(textBox1.Text, CultureInfo.InvariantCulture.NumberFormat);
+            coeffs[1] = float.Parse(textBox2.Text, CultureInfo.InvariantCulture.NumberFormat);
+            coeffs[2] = float.Parse(textBox3.Text, CultureInfo.InvariantCulture.NumberFormat);
+            coeffs[3] = float.Parse(textBox4.Text, CultureInfo.InvariantCulture.NumberFormat);
+            coeffs[4] = float.Parse(textBox5.Text, CultureInfo.InvariantCulture.NumberFormat);
+
+            return coeffs;
+        }
+
+        float UserPoly(float[] userCoeff, float point)
+        {
+            float result = 0;
+
+            for (int i = 0; i < userCoeff.Length; i++)
+            {
+                result += userCoeff[i] * (float)Math.Pow(point, i);
+            }
+
+            return result;
+        }
+
+        void RenderPlot(float[] polyCoeff, 
                         Func<float[], float, float> Poly, 
+                        float[] userCoeff,
                         System.Windows.Forms.DataVisualization.Charting.Chart chart,
                         string legend)
         {
             float[] pointsFunc = new float[100];
+            float[] pointsUser = new float[100];
             float[] pointsX = new float[100];
             float start = X[0], end = X[X.Length - 1];
             float h = (end - start) / (float)pointsFunc.Length;
 
             chart.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            chart.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             chart.Series[0].LegendText = legend;
 
             for (int i = 0; i < pointsFunc.Length; i++)
             {
                 pointsX[i] = start + h * i;
-                pointsFunc[i] = Poly(lagrCoeff, pointsX[i]);
+                pointsFunc[i] = Poly(polyCoeff, pointsX[i]);
+                pointsUser[i] = UserPoly(userCoeff, pointsX[i]);
                 chart.Series[0].Points.AddXY(pointsX[i], pointsFunc[i]);
+                chart.Series[1].Points.AddXY(pointsX[i], pointsUser[i]);
             }
 
         }
@@ -296,16 +337,59 @@ namespace Interpolation
             float[] squares1Coeff = SquaresCoeffs(1);
             float[] squares2Coeff = SquaresCoeffs(2);
             float[] squares3Coeff = SquaresCoeffs(3);
+            float[] userCoeff = GetUserCoeffs();
 
             Func<float[], float, float> LagrPoly = LagrangePoly;
             Func<float[], float, float> NewtPoly = NewtonPoly;
             Func<float[], float, float> SqrPoly = SquaresPoly;
 
-            RenderPlot(lagrCoeff, LagrPoly, chart1, "Метод Лагранжа");
-            RenderPlot(newtCoeff, NewtPoly, chart2, "Метод Ньютона");
-            RenderPlot(squares1Coeff, SqrPoly, chart3, "Метод наименьших квадратов 1-й степени");
-            RenderPlot(squares2Coeff, SqrPoly, chart4, "Метод наименьших квадратов 2-й степени");
-            RenderPlot(squares3Coeff, SqrPoly, chart5, "Метод наименьших квадратов 3-й степени");
+            RenderPlot(lagrCoeff, LagrPoly, userCoeff, chart1, "Метод Лагранжа");
+            RenderPlot(newtCoeff, NewtPoly, userCoeff, chart2, "Метод Ньютона");
+            RenderPlot(squares1Coeff, SqrPoly, userCoeff, chart3, "Метод наименьших квадратов 1-й степени");
+            RenderPlot(squares2Coeff, SqrPoly, userCoeff, chart4, "Метод наименьших квадратов 2-й степени");
+            RenderPlot(squares3Coeff, SqrPoly, userCoeff, chart5, "Метод наименьших квадратов 3-й степени");
+        }
+
+        private bool CheckCharacter(char ch, string text)
+        {
+            bool result = false;
+
+            result = !Char.IsDigit(ch)
+                && ch != 8
+                && (ch != '.' || text.Contains('.'))
+                && (ch != '-' || text.Length != 0);
+
+            return result;
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            e.Handled = CheckCharacter(ch, textBox1.Text);
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            e.Handled = CheckCharacter(ch, textBox2.Text);
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            e.Handled = CheckCharacter(ch, textBox3.Text);
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            e.Handled = CheckCharacter(ch, textBox4.Text);
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            e.Handled = CheckCharacter(ch, textBox5.Text);
         }
     }
 }

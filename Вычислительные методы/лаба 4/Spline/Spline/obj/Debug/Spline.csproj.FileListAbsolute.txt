@@ -1,0 +1,9 @@
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\obj\Debug\Spline.csprojAssemblyReference.cache
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\obj\Debug\Spline.Form1.resources
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\obj\Debug\Spline.Properties.Resources.resources
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\obj\Debug\Spline.csproj.GenerateResource.cache
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\bin\Debug\Spline.exe.config
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\bin\Debug\Spline.exe
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\bin\Debug\Spline.pdb
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\obj\Debug\Spline.exe
+C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 4\Spline\Spline\obj\Debug\Spline.pdb

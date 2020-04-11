@@ -6,7 +6,7 @@ int findMaxIndex(float** a, int startIndex)
 
 	for (int j = startIndex; j < 3; j++)
 	{
-		if (a[startIndex][maxIndex] > a[startIndex][j])	maxIndex = j;
+		if (a[startIndex][maxIndex] < a[startIndex][j])	maxIndex = j;
 	}
 
 	return maxIndex;
@@ -120,7 +120,7 @@ float* iter(float** a, float* b, float precise)
 		for (int j = 0; j < 3; j++)
 		{
 			if (i == j) continue;
-			sum += fabs(a[i][j] / a[i][i]);
+			//sum += fabs(a[i][j] / a[i][i]);
 		}
 		if (norm < sum)
 			norm = sum;
