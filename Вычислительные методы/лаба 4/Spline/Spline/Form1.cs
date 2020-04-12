@@ -47,7 +47,7 @@ namespace Spline
 
             for (int j = startIndex; j < degree + 1; j++)
             {
-                if (a[startIndex][maxIndex] < a[startIndex][j]) maxIndex = j;
+                if (a[maxIndex][startIndex] < a[j][startIndex]) maxIndex = j;
             }
 
             return maxIndex;

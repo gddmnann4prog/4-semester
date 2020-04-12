@@ -7,7 +7,7 @@ int findMaxIndex(float** a, int startIndex)
 
 	for (int j = startIndex; j < 3; j++)
 	{
-		if (a[startIndex][maxIndex] < a[startIndex][j])	maxIndex = j;
+		if (a[maxIndex][startIndex] < a[j][startIndex])	maxIndex = j;
 	}
 
 	return maxIndex;

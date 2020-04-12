@@ -1,4 +1,4 @@
-﻿Сборка начата 10.04.2020 22:28:09.
+﻿Сборка начата 12.04.2020 12:19:17.
      1>Проект "C:\Users\Buzzz\Desktop\Учеба\4 семак\Вычи\лаба 2\Matrices (VS 2013)\Matrices (VS 2013)\Matrices (VS 2013).vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
@@ -10,4 +10,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:01.45
+Затраченное время: 00:00:02.23
